@@ -171,7 +171,7 @@ a{text-decoration:none}
 .stat-dot{width:6px;height:6px;border-radius:50%;background:#777}
 .stat-dot.online{background:#9ee6b3}
 .discord-card .btn-main{background:#4752c4;font-family:inherit;font-weight:600;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;flex-shrink:0}
-.discord-card .btn-main svg{width:13px;height:13px;fill:none;stroke:#fff;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.discord-card .btn-main .icon,.team-card .btn-main .icon{width:16px;height:16px;fill:#fff;color:#fff}
 .discord-card .btn-main,.team-card .btn-main{transition:transform .25s ease,box-shadow .25s ease,border-color .2s,color .2s,background .2s}
 .discord-card .btn-main:hover,.team-card .btn-main:hover{transform:translateY(-2px)}
 .discord-card .btn-main:active,.team-card .btn-main:active{transform:translateY(0)}
@@ -204,7 +204,6 @@ a{text-decoration:none}
 .team-name{color:#fff;font-family:inherit;font-size:20px;font-weight:600;line-height:1.3}
 .team-role{margin-top:8px;color:var(--muted);font-size:14px}
 .team-card .btn-main{background:#b00000;font-family:inherit;font-weight:600;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;flex-shrink:0}
-.team-card .btn-main svg{width:13px;height:13px;fill:none;stroke:#fff;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
 @media(max-width:600px){.team{padding:.5rem 0 3rem}.footer-legal{justify-content:center}.team-card{flex-direction:column;align-items:center;text-align:center;gap:1.25rem;padding:1.5rem}.team-info{flex-direction:column;gap:.9rem;width:100%}.team-info img{width:60px;height:60px}.team-text{text-align:center}.team-card .btn-main{width:100%;max-width:280px;align-self:center}}
 </style>
 </head>
@@ -218,8 +217,6 @@ a{text-decoration:none}
 <canvas id="stars"></canvas>
 <div class="page">
 <nav class="navbar">
-<div class="nav-logo"><img src="https://ametium.dev/ametium.png" alt="" width="28" height="28" onerror="this.style.display='none'">Ametium</div>
-<div class="nav-actions"><a class="icon-btn" href="https://github.com/itsdarexmc" target="_blank" rel="noopener noreferrer" aria-label="GitHub (se abre en una pestaña nueva)"><svg class="icon" width="14" height="14" aria-hidden="true"><use href="#i-github"/></svg></a><a class="icon-btn" href="https://discord.gg/ametium" target="_blank" rel="noopener noreferrer" aria-label="Discord (se abre en una pestaña nueva)"><svg class="icon" width="14" height="14" aria-hidden="true"><use href="#i-discord"/></svg></a><a class="icon-btn" href="https://youtube.com/@itsdarexmc" target="_blank" rel="noopener noreferrer" aria-label="YouTube (se abre en una pestaña nueva)"><svg class="icon" width="14" height="14" aria-hidden="true"><use href="#i-youtube"/></svg></a></div>
 <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
 </nav>
 <div id="mobile-menu" class="mobile-menu">
@@ -232,7 +229,7 @@ a{text-decoration:none}
 <div class="hero-bg"></div><div class="hero-grid"></div>
 <h1 class="hero-title"><span class="word-main">Ametium</span><span class="word-sub">Utility Mod</span></h1>
 <p class="hero-sub">An addon for Meteor Client that adds some of the most advanced modules to Minecraft.</p>
-<div class="hero-buttons"><a href="https://discord.gg/ametium" class="btn-main" target="_blank" rel="noopener noreferrer"><svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-discord"/></svg>Discord</a><a href="https://www.youtube.com/watch?v=JmRzva44GXI" class="btn-ghost" target="_blank" rel="noopener noreferrer"><svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-youtube"/></svg>YouTube</a></div>
+<div class="hero-buttons"><a href="https://discord.gg/ametium" class="btn-main" target="_blank" rel="noopener noreferrer"><svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-discord"/></svg>Discord</a><a href="https://github.com/itsdarexmc" class="btn-ghost" target="_blank" rel="noopener noreferrer"><svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a></div>
 </section>
 </main>
 <footer class="footer"><div class="footer-inner">
@@ -247,7 +244,7 @@ a{text-decoration:none}
 </div>
 </div>
 </div>
-<a href="https://discord.gg/ametium" class="btn-main" target="_blank" rel="noopener noreferrer">Discord<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+<a href="https://discord.gg/ametium" class="btn-main" target="_blank" rel="noopener noreferrer"><svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-discord"/></svg>Discord</a>
 </div>
 <section class="team" id="team">
 <h2 class="section-title">Dev Team</h2>
@@ -260,7 +257,7 @@ a{text-decoration:none}
 <div class="team-role">Owner/Founder</div>
 </div>
 </div>
-<a href="https://youtube.com/@itsdarexmc" class="btn-main" target="_blank" rel="noopener noreferrer">YouTube<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+<a href="https://youtube.com/@itsdarexmc" class="btn-main" target="_blank" rel="noopener noreferrer"><svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-youtube"/></svg>YouTube</a>
 </div>
 </div>
 </section>
