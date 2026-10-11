@@ -78,14 +78,16 @@ a{text-decoration:none}
 .hero-badge-wrap{animation:fadeUp .6s both;margin-bottom:2rem;position:relative}
 .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:.35rem 1rem;font-size:.78rem;color:rgba(255,255,255,.7);letter-spacing:.08em;text-transform:uppercase}
 .hero-badge span{width:6px;height:6px;border-radius:50%;background:#fff;box-shadow:0 0 8px rgba(255,255,255,.8);display:inline-block;animation:pulse 2s infinite}
-.hero-text{display:block;width:max-content;max-width:100%;font-size:clamp(3rem,8vw,6.5rem)}
+.hero-text{display:block;width:max-content;max-width:100%;font-size:clamp(4.6rem,10vw,6.5rem)}
 .hero-title{font-family:var(--font-display);font-size:1em;font-weight:900;line-height:1;letter-spacing:-.02em;margin-bottom:.22em;animation:fadeUp .6s .1s ease both;position:relative}
 .hero-title .word-main{display:block;color:#5a0096}
-.hero-title .word-sub{display:block;color:#fff;font-size:.55em;letter-spacing:0;-webkit-text-fill-color:#fff}
+.hero-title .word-sub{display:block;color:#fff;font-size:.7em;letter-spacing:0;-webkit-text-fill-color:#fff}
 .nav-logo,.hero-title .word-sub,.hero-sub,.discord-text h2,.discord-stats,.btn-text,.footer-copy,.btn-main,.btn-ghost{text-shadow:0 0 6px color-mix(in srgb,currentColor 25%,transparent),0 0 16px color-mix(in srgb,currentColor 25%,transparent)}
 .hero-title .word-main{text-shadow:0 0 8px color-mix(in srgb,currentColor 25%,transparent),0 0 24px color-mix(in srgb,currentColor 25%,transparent),0 0 48px color-mix(in srgb,currentColor 25%,transparent),0 0 80px color-mix(in srgb,currentColor 25%,transparent)}
-.hero-sub{font-size:max(.8rem,.165em);width:0;min-width:100%;text-wrap:balance;color:var(--muted);line-height:1.7;margin-bottom:2.5rem;animation:fadeUp .6s .2s ease both;position:relative}
-.hero-buttons{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;animation:fadeUp .6s .3s ease both;position:relative}
+.hero-sub{font-size:max(.7rem,.18em);width:0;min-width:100%;text-wrap:balance;color:var(--muted);line-height:1.6;margin-bottom:2.5rem;animation:fadeUp .6s .2s ease both;position:relative}
+.hero-buttons{display:flex;gap:.75rem;flex-wrap:nowrap;width:100%;justify-content:center;animation:fadeUp .6s .3s ease both;position:relative}
+.hero-buttons .btn-main,.hero-buttons .btn-ghost{flex:1 1 0;padding-left:.75rem;padding-right:.75rem;white-space:nowrap}
+.hero-buttons .btn-main{border:2px solid transparent}
 .hero-compat{margin-top:3rem;font-size:.78rem;color:var(--muted);letter-spacing:.06em;animation:fadeUp .6s .4s ease both;position:relative}
 .stats-band{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--surface);padding:3rem 2rem}
 .stats-inner{max-width:900px;margin:0 auto;display:flex;justify-content:space-around;flex-wrap:wrap;gap:2rem;text-align:center}
@@ -180,11 +182,9 @@ a{text-decoration:none}
 @media(max-width:600px){
 .navbar{padding:0 1rem}
 .hero{padding:7rem 1.25rem 4rem}
-.hero-text{font-size:clamp(2.6rem,14vw,4rem)}
-.hero-title .word-sub{font-size:.7em;margin-top:.35rem}
-.hero-sub{font-size:max(.8rem,.26em)}
-.hero-buttons{flex-direction:column;align-items:center;width:100%;max-width:280px;gap:.75rem}
-.hero-buttons .btn-main,.hero-buttons .btn-ghost{width:100%}
+.hero-text{font-size:clamp(2.6rem,18vw,4.4rem)}
+.hero-buttons{flex-direction:column;align-items:center;width:100%;gap:.75rem}
+.hero-buttons .btn-main,.hero-buttons .btn-ghost{flex:none;width:100%}
 .footer{padding:3rem 1rem 2rem}
 .discord-card{align-items:center;text-align:center;gap:1.25rem}
 .discord-info{flex-direction:column;gap:.9rem;width:100%}
@@ -229,9 +229,11 @@ a{text-decoration:none}
 <main>
 <section class="hero" id="home">
 <div class="hero-bg"></div><div class="hero-grid"></div>
-<div class="hero-text"><h1 class="hero-title"><span class="word-main">Ametium</span><span class="word-sub">Utility Mod</span></h1>
-<p class="hero-sub">An addon for Meteor Client that adds some of the most advanced modules to Minecraft.</p></div>
+<div class="hero-text">
+<h1 class="hero-title"><span class="word-main">Ametium</span><span class="word-sub">Utility Mod</span></h1>
+<p class="hero-sub">An addon for Meteor Client that adds some of the most advanced modules to Minecraft.</p>
 <div class="hero-buttons"><a href="https://discord.gg/ametium" class="btn-main" target="_blank" rel="noopener noreferrer"><svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-discord"/></svg>Discord</a><a href="https://github.com/itsdarexmc" class="btn-ghost" target="_blank" rel="noopener noreferrer"><svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a></div>
+</div>
 </section>
 </main>
 <footer class="footer"><div class="footer-inner">
