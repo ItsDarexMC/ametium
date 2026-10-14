@@ -17,7 +17,7 @@
 <meta name="twitter:image" content="https://ametium.dev/ametium.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#080808;--surface:#111;--border:rgba(255,255,255,.08);--border-hover:rgba(255,255,255,.18);--accent:#fff;--muted:rgba(255,255,255,.45);--font-display:Arial,Helvetica,sans-serif;--font-body:Arial,Helvetica,sans-serif;--font-nav:Arial,Helvetica,sans-serif}
 *,*:before,*:after{box-sizing:border-box;margin:0;padding:0}
@@ -78,14 +78,15 @@ a{text-decoration:none}
 .hero-badge-wrap{animation:fadeUp .6s both;margin-bottom:2rem;position:relative}
 .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:.35rem 1rem;font-size:.78rem;color:rgba(255,255,255,.7);letter-spacing:.08em;text-transform:uppercase}
 .hero-badge span{width:6px;height:6px;border-radius:50%;background:#fff;box-shadow:0 0 8px rgba(255,255,255,.8);display:inline-block;animation:pulse 2s infinite}
-.hero-text{display:block;width:max-content;max-width:100%;font-size:clamp(4.6rem,10vw,6.5rem)}
-.hero-title{font-family:var(--font-display);font-size:1em;font-weight:900;line-height:1;letter-spacing:-.02em;margin-bottom:.22em;animation:fadeUp .6s .1s ease both;position:relative}
+.hero-text{text-align:center}
+.hero-title{font-family:'Poppins',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:clamp(2.25rem,1.2rem + 4.5vw,4.5rem);font-weight:700;line-height:1.12;letter-spacing:-.025em;text-wrap:balance;animation:fadeUp .6s .1s ease both;position:relative}
 .hero-title .word-main{display:block;color:#5a0096}
-.hero-title .word-sub{display:block;color:#fff;font-size:.7em;letter-spacing:0;-webkit-text-fill-color:#fff}
+.hero-title .word-sub{display:block;color:#fff;-webkit-text-fill-color:#fff}
 .nav-logo,.hero-title .word-sub,.hero-sub,.discord-text h2,.discord-stats,.btn-text,.footer-copy,.btn-main,.btn-ghost{text-shadow:0 0 6px color-mix(in srgb,currentColor 25%,transparent),0 0 16px color-mix(in srgb,currentColor 25%,transparent)}
 .hero-title .word-main{text-shadow:0 0 8px color-mix(in srgb,currentColor 25%,transparent),0 0 24px color-mix(in srgb,currentColor 25%,transparent),0 0 48px color-mix(in srgb,currentColor 25%,transparent),0 0 80px color-mix(in srgb,currentColor 25%,transparent)}
-.hero-sub{font-size:max(.7rem,.18em);width:0;min-width:100%;text-wrap:balance;color:var(--muted);line-height:1.6;margin-bottom:2.5rem;animation:fadeUp .6s .2s ease both;position:relative}
-.hero-buttons{display:flex;gap:.75rem;flex-wrap:nowrap;width:100%;justify-content:center;animation:fadeUp .6s .3s ease both;position:relative}
+.hero-sub{font-family:'Poppins',system-ui,-apple-system,'Segoe UI',sans-serif;margin:1.5rem auto 0;max-width:32rem;font-size:.875rem;line-height:1.65;color:#a1a1aa;text-wrap:pretty;animation:fadeUp .6s .2s ease both;position:relative}
+@media(min-width:640px){.hero-sub{font-size:1rem}}
+.hero-buttons{display:flex;gap:.75rem;flex-wrap:nowrap;font-size:clamp(4.6rem,10vw,6.5rem);width:4.1384em;max-width:100%;margin:2rem auto 0;justify-content:center;animation:fadeUp .6s .3s ease both;position:relative}
 .hero-buttons .btn-main,.hero-buttons .btn-ghost{flex:1 1 0;padding-left:.75rem;padding-right:.75rem;white-space:nowrap}
 .hero-buttons .btn-main{border:2px solid transparent}
 .hero-compat{margin-top:3rem;font-size:.78rem;color:var(--muted);letter-spacing:.06em;animation:fadeUp .6s .4s ease both;position:relative}
@@ -182,8 +183,7 @@ a{text-decoration:none}
 @media(max-width:600px){
 .navbar{padding:0 1rem}
 .hero{padding:7rem 1.25rem 4rem}
-.hero-text{font-size:clamp(2.6rem,18vw,4.4rem)}
-.hero-buttons{flex-direction:column;align-items:center;width:100%;gap:.75rem}
+.hero-buttons{flex-direction:column;align-items:center;font-size:clamp(2.6rem,18vw,4.4rem);gap:.75rem}
 .hero-buttons .btn-main,.hero-buttons .btn-ghost{flex:none;width:100%}
 .footer{padding:3rem 1rem 2rem}
 .discord-card{align-items:center;text-align:center;gap:1.25rem}
@@ -207,6 +207,11 @@ a{text-decoration:none}
 .team-role{margin-top:8px;color:var(--muted);font-size:14px}
 .team-card .btn-main{background:#b00000;font-family:inherit;font-weight:600;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;flex-shrink:0}
 @media(max-width:600px){.team{padding:0 0 3rem}.footer-legal{justify-content:center}.team-card{flex-direction:column;align-items:center;text-align:center;gap:1.25rem;padding:1.5rem}.team-info{flex-direction:column;gap:.9rem;width:100%}.team-info img{width:60px;height:60px}.team-text{text-align:center}.team-card .btn-main{width:100%;max-width:280px;align-self:center}}
+.hero-inner{position:relative;display:flex;flex-direction:column;align-items:stretch;gap:3rem;width:100%;max-width:80rem;margin:0 auto}
+.hero-logo{display:flex;align-items:center;justify-content:center;animation:fadeUp .6s .1s ease both}
+.hero-logo img{width:180px;height:180px;object-fit:contain;border-radius:16px}
+@media(min-width:640px){.hero-logo img{width:256px;height:256px}}
+@media(min-width:1024px){.hero{padding:6rem 1.5rem;text-align:left}.hero-inner{flex-direction:row;align-items:center;gap:4rem}.hero-text{order:1;width:60%;text-align:left}.hero-sub,.hero-buttons{margin-left:0}.hero-logo{order:2;width:40%;justify-content:flex-end}.hero-logo img{width:320px;height:320px}}
 </style>
 </head>
 <body>
@@ -229,10 +234,13 @@ a{text-decoration:none}
 <main>
 <section class="hero" id="home">
 <div class="hero-bg"></div><div class="hero-grid"></div>
+<div class="hero-inner">
+<div class="hero-logo"><img src="https://ametium.dev/ametium.png" alt="Ametium" width="320" height="320" onerror="this.style.display='none'"></div>
 <div class="hero-text">
 <h1 class="hero-title"><span class="word-main">Ametium</span><span class="word-sub">Utility Mod</span></h1>
 <p class="hero-sub">An addon for Meteor Client that adds some of the most advanced modules to Minecraft.</p>
 <div class="hero-buttons"><a href="https://discord.gg/ametium" class="btn-main" target="_blank" rel="noopener noreferrer"><svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-discord"/></svg>Discord</a><a href="https://github.com/itsdarexmc" class="btn-ghost" target="_blank" rel="noopener noreferrer"><svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a></div>
+</div>
 </div>
 </section>
 </main>
