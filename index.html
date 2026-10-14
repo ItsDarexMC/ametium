@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ametium.dev</title>
 <link rel="icon" type="image/png" href="https://ametium.dev/ametium.png">
+<link rel="canonical" href="https://ametium.dev">
 <meta name="description" content="An addon for Meteor Client that adds some of the most advanced modules to Minecraft.">
+<meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#5a0096">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ametium">
@@ -13,108 +15,120 @@
 <meta property="og:description" content="An addon for Meteor Client that adds some of the most advanced modules to Minecraft.">
 <meta property="og:url" content="https://ametium.dev">
 <meta property="og:image" content="https://ametium.dev/ametium.png">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://ametium.dev/ametium.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#080808;--surface:#111;--border:rgba(255,255,255,.08);--muted:rgba(255,255,255,.5);--brand:#5a0096;--font:'Poppins',system-ui,-apple-system,'Segoe UI',Arial,sans-serif}
-*,*:before,*:after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-padding-top:64px;-webkit-text-size-adjust:100%}
-@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
-body{background:var(--bg);color:#5a0096;font-family:var(--font);overflow-x:hidden;-webkit-font-smoothing:antialiased}
-a{text-decoration:none}
-button{font-family:inherit}
-img{display:block}
-@keyframes fadeUp{0%{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-@keyframes float{0%,to{transform:translateY(0)}50%{transform:translateY(-10px)}}
-#stars{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
-.page{position:relative;z-index:1}
-.navbar{display:none;position:fixed;top:0;left:0;right:0;z-index:100;padding:0 1rem;height:64px;align-items:center;justify-content:flex-end;background:rgba(8,8,8,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
-.hamburger{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
-.hamburger span{display:block;width:22px;height:2px;background:rgba(255,255,255,.75);border-radius:2px;transition:transform .3s,opacity .3s}
-.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.hamburger.open span:nth-child(2){opacity:0}
-.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(8,8,8,.98);border-bottom:1px solid rgba(255,255,255,.06);padding:1.25rem 1.5rem 1.5rem;flex-direction:column;gap:.25rem;z-index:99}
-.mobile-menu.open{display:flex}
-.mobile-menu a{color:rgba(255,255,255,.75);font-size:1rem;font-weight:500;padding:.8rem 0;border-bottom:1px solid rgba(255,255,255,.06);transition:color .2s}
-.mobile-menu a:hover{color:#fff}
-.mobile-menu .mobile-cta{background:#5a0096;color:#fff;text-align:center;padding:.75rem 1rem;border-radius:8px;font-weight:600;margin-top:.75rem;border:0}
-@media(max-width:768px){.navbar{display:flex}}
-.icon{width:16px;height:16px;fill:currentColor;flex-shrink:0;display:block}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.875rem 2rem;border-radius:10px;font-family:var(--font);font-size:.85rem;font-weight:600;line-height:1.5;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;cursor:pointer;border:2px solid transparent;transition:transform .25s ease,background .2s,border-color .2s,color .2s,box-shadow .25s}
-.btn:hover{transform:translateY(-2px)}
-.btn:active{transform:translateY(0)}
-.btn-main{background:#5a0096;color:#fff}
-.btn-main:hover{background:#6c0fb4;box-shadow:0 8px 28px rgba(90,0,150,.45)}
-.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.14)}
-.btn-ghost:hover{border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.05)}
-.hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;padding:6rem 1.5rem 5rem;position:relative;overflow:hidden}
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:60px 60px;-webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 50%,black 20%,transparent 75%);mask-image:radial-gradient(ellipse 80% 60% at 50% 50%,black 20%,transparent 75%);pointer-events:none}
-.hero-inner{position:relative;display:flex;flex-direction:column;align-items:center;gap:clamp(2rem,5vw,3rem);width:100%;max-width:72rem;text-align:center}
-.hero-logo{position:relative;width:clamp(160px,38vw,300px);aspect-ratio:1/1;flex-shrink:0;animation:fadeUp .7s .1s ease both}
-.hero-logo:before{content:"";position:absolute;inset:-25%;background:radial-gradient(circle,rgba(90,0,150,.5) 0%,transparent 65%);filter:blur(30px);pointer-events:none}
-.hero-logo img{position:relative;width:100%;height:100%;object-fit:contain;border-radius:16px}
-@media(prefers-reduced-motion:no-preference){.hero-logo img{animation:float 6s ease-in-out infinite}}
-.hero-text{display:flex;flex-direction:column;align-items:center}
-.hero-title{font-size:clamp(2.5rem,1.2rem + 5vw,4.75rem);font-weight:700;line-height:1.1;letter-spacing:-.03em;text-wrap:balance;animation:fadeUp .7s .2s ease both}
-.hero-title span{display:block}
-.word-main{color:#5a0096;text-shadow:0 0 28px rgba(90,0,150,.65)}
-.word-sub{color:#fff}
-.hero-sub{margin-top:1.25rem;max-width:32rem;font-size:.95rem;line-height:1.7;color:#a1a1aa;text-wrap:pretty;animation:fadeUp .7s .3s ease both}
-@media(min-width:640px){.hero-sub{font-size:1.05rem}}
-.hero-buttons{display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center;margin-top:2rem;animation:fadeUp .7s .4s ease both}
-@media(max-width:480px){.hero-buttons{flex-direction:column;width:100%;max-width:20rem}.hero-buttons .btn{width:100%}}
-@media(min-width:1024px){.hero-inner{flex-direction:row;justify-content:space-between;gap:4rem;text-align:left}.hero-text{order:1;align-items:flex-start;flex:1 1 auto;max-width:36rem}.hero-buttons{justify-content:flex-start}.hero-logo{order:2;width:clamp(260px,26vw,340px)}}
-.footer{position:relative;border-top:1px solid rgba(255,255,255,.08);background:var(--bg);padding:4rem 2rem 2rem;font-family:var(--font)}
-.footer-inner{max-width:1100px;margin:0 auto}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
-.footer-copy{font-size:.78rem;color:rgba(255,255,255,.2)}
-.footer-copy span{color:inherit}
-.footer-legal{display:flex;gap:1.5rem}
-.footer-legal a{font-size:.78rem;color:rgba(255,255,255,.2);transition:color .2s}
-.footer-legal a:hover{color:rgba(255,255,255,.5)}
-@media(max-width:480px){.footer-bottom{flex-direction:column;align-items:flex-start}}
-.discord-card{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:2rem;margin-bottom:1rem;background:rgba(8,8,8,.85);border:1px solid rgba(255,255,255,.06);border-radius:16px}
-.discord-info{display:flex;align-items:center;gap:1.25rem;min-width:0}
-.discord-info img{width:72px;height:72px;border-radius:12px;flex-shrink:0;border:0;object-fit:cover}
-.discord-text{min-width:0}
-.discord-text h2{color:#fff;font-family:inherit;font-size:20px;font-weight:600;line-height:1.3}
-.discord-stats{display:flex;flex-wrap:wrap;gap:4px 15px;margin-top:8px;color:var(--muted);font-size:14px;font-variant-numeric:tabular-nums}
-.discord-stats>span{display:inline-flex;align-items:center;gap:6px}
-.stat-dot{width:6px;height:6px;border-radius:50%;background:#777}
-.stat-dot.online{background:#9ee6b3}
-.discord-card .btn-main,.team-card .btn-main{font-size:.95rem;font-weight:600;letter-spacing:normal;text-transform:none;padding:.85rem 2rem;border-radius:8px;flex-shrink:0}
-.discord-card .btn-main{background:#4752c4}
-.team-card .btn-main{background:#b00000}
-.discord-card .btn-main:hover{background:#4752c4;box-shadow:none}
-.team-card .btn-main:hover{background:#b00000;box-shadow:none}
-.team{padding:0 0 4rem;text-align:center}
-.team-card{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:2rem;background:rgba(8,8,8,.85);border:1px solid rgba(255,255,255,.06);border-radius:16px}
-.team-info{display:flex;align-items:center;gap:1.25rem;min-width:0}
-.team-info img{width:72px;height:72px;border-radius:12px;flex-shrink:0;border:0;object-fit:cover}
-.team-text{min-width:0;text-align:left}
-.team-name{color:#fff;font-family:inherit;font-size:20px;font-weight:600;line-height:1.3}
-.team-role{margin-top:8px;color:var(--muted);font-size:14px}
-@media(max-width:600px){
-.footer{padding:3rem 1rem 2rem}
-.footer-bottom{flex-direction:column;align-items:center;text-align:center}
-.footer-legal{justify-content:center}
-.discord-card{flex-direction:column;align-items:center;text-align:center;gap:1.25rem;padding:1.5rem}
-.discord-info{flex-direction:column;gap:.9rem;width:100%}
-.discord-info img{width:60px;height:60px}
-.discord-text{text-align:center}
-.discord-stats{justify-content:center}
-.discord-card .btn-main{width:100%;max-width:280px;align-self:center}
-.team{padding:0 0 3rem}
-.team-card{flex-direction:column;align-items:center;text-align:center;gap:1.25rem;padding:1.5rem}
-.team-info{flex-direction:column;gap:.9rem;width:100%}
-.team-info img{width:60px;height:60px}
-.team-text{text-align:center}
-.team-card .btn-main{width:100%;max-width:280px;align-self:center}
+:root{
+  color-scheme:dark;
+  --brand:#5a0096;
+  --bg:#111;
+  --bg-2:#171717;
+  --text:#f5f5f5;
+  --muted:#a3a3a3;
+  --faint:#8a8a8a;
+  --line:rgba(255,255,255,.08);
+  --line-hi:rgba(255,255,255,.2);
+  --font:'Montserrat',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --pad:clamp(1.25rem,6vw,5rem);
 }
+*,*:before,*:after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;background:var(--bg)}
+body{
+  min-height:100vh;min-height:100svh;display:flex;flex-direction:column;
+  background-color:var(--bg);
+  background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);
+  background-size:28px 28px;
+  color:var(--text);font-family:var(--font);
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+svg{display:block}
+:focus-visible{outline:2px solid #fff;outline-offset:3px;border-radius:6px}
+::selection{background:var(--brand);color:#fff}
+.icon{width:17px;height:17px;fill:currentColor;flex-shrink:0}
+
+/* Hero */
+main{flex:1}
+.hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:3rem 1.5rem}
+.hero h1{font-size:clamp(2.6rem,1rem + 7vw,5.75rem);font-weight:700;line-height:1.05;letter-spacing:-.035em;text-wrap:balance}
+.word{color:var(--brand)}
+.lead{margin-top:1.5rem;max-width:34rem;font-size:clamp(1rem,.95rem + .35vw,1.2rem);line-height:1.7;color:var(--muted);text-wrap:pretty}
+.cta-row{display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center;margin-top:2.25rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:.85rem 1.7rem;border-radius:10px;font-family:inherit;font-size:.95rem;font-weight:600;line-height:1.2;border:1px solid transparent;transition:transform .35s var(--ease),background-color .25s ease,border-color .25s ease}
+.btn .icon{transition:transform .35s var(--ease)}
+.btn-main{background:var(--brand);border-color:var(--brand);color:#fff}
+@media(hover:hover){.btn-main:hover{background:#6e1fa3;border-color:#6e1fa3}}
+.btn-ghost{background:transparent;border-color:var(--line-hi);color:#fff}
+@media(hover:hover){.btn-ghost:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.4)}}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+  .btn:hover{transform:translateY(-2px)}
+  .btn:hover .icon{transform:scale(1.12)}
+}
+@media(prefers-reduced-motion:no-preference){
+  .btn:active{transform:translateY(0) scale(.97);transition-duration:.1s}
+}
+@media(prefers-reduced-motion:reduce){.btn .icon{transition:none}}
+@media(prefers-reduced-motion:no-preference){
+  .rise{opacity:0;animation:rise .8s var(--ease) forwards}
+  .d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.25s}
+  @keyframes rise{from{opacity:0;transform:translateY(22px) scale(.98)}to{opacity:1;transform:none}}
+}
+@media(max-width:480px){.cta-row{flex-direction:column;width:100%;max-width:20rem}.cta-row .btn{width:100%}}
+
+/* Sections (alternan #111 / #171717) */
+.sec{padding:clamp(3.5rem,8vw,6rem) var(--pad)}
+.sec-alt{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.wrap{max-width:900px;margin:0 auto}
+.sec h2{text-align:center;font-size:clamp(1.8rem,1.2rem + 2.2vw,2.6rem);font-weight:700;line-height:1.15;letter-spacing:-.03em;margin-bottom:2.25rem}
+.card{display:flex;align-items:center;justify-content:space-between;gap:1.25rem 2rem;padding:1.75rem 2rem;background:var(--bg-2);border:1px solid var(--line);border-radius:14px}
+.sec-alt .card{background:var(--bg)}
+.who{display:flex;align-items:center;gap:1.25rem;min-width:0}
+.who img{width:72px;height:72px;flex-shrink:0;border-radius:12px;object-fit:cover}
+.skin{image-rendering:pixelated}
+.stats{display:flex;flex-wrap:wrap;gap:.35rem 1.1rem;margin-top:.5rem;font-family:'Poppins',var(--font);font-size:.9rem;font-variant-numeric:tabular-nums;color:var(--muted)}
+.stats span{display:inline-flex;align-items:center;gap:.45rem}
+.dot{width:7px;height:7px;flex-shrink:0;border-radius:50%;background:#b4b4b4;box-shadow:0 0 6px 1px rgba(180,180,180,.7)}
+.dot.on{background:#3ddc6b;box-shadow:0 0 7px 2px rgba(61,220,107,.75)}
+.invite{gap:clamp(1.5rem,4vw,3rem);padding:clamp(1.75rem,5vw,3.25rem);border-radius:24px}
+.invite-copy h3{font-size:clamp(1.5rem,1.1rem + 1.6vw,2.1rem);font-weight:700;line-height:1.15;letter-spacing:-.03em;text-wrap:balance}
+.invite-copy p{margin-top:.9rem;max-width:32rem;font-size:clamp(1rem,.95rem + .3vw,1.1rem);line-height:1.7;color:var(--muted);text-wrap:pretty}
+.invite .stats{margin-top:1.25rem}
+.invite .btn{min-height:52px;padding:0 1.9rem;white-space:nowrap}
+.sec-alt .invite{background:radial-gradient(34rem 18rem at 100% 0%,rgba(88,101,242,.16),transparent 70%),var(--bg)}
+.invite .btn-main{background:#5865f2;border-color:#5865f2;box-shadow:0 10px 30px -12px rgba(88,101,242,.7)}
+@media(hover:hover){.invite .btn-main:hover{background:#6b77f5;border-color:#6b77f5}}
+.founder{background:radial-gradient(34rem 18rem at 100% 0%,rgba(185,28,28,.2),transparent 70%),var(--bg-2)}
+.founder .who{gap:1.5rem}
+.founder .who img{width:88px;height:88px}
+.founder .invite-copy p{margin-top:.4rem}
+.founder .btn-main{background:#b91c1c;border-color:#b91c1c;box-shadow:0 10px 30px -12px rgba(185,28,28,.65)}
+@media(hover:hover){.founder .btn-main:hover{background:#d12a2a;border-color:#d12a2a}}
+@media(prefers-reduced-motion:no-preference){
+  @supports(animation-timeline:view()){
+    .reveal{animation:rise linear backwards;animation-timeline:view();animation-range:entry 0% entry 40%}
+  }
+}
+@media(max-width:600px){
+  .card{flex-direction:column;text-align:center;padding:1.5rem}
+  .who{flex-direction:column;gap:.9rem}
+  .stats{justify-content:center}
+  .card .btn{width:100%;max-width:18rem}
+  .founder .who{flex-direction:row;gap:1rem}
+  .founder .who img{width:72px;height:72px}
+  .card.invite{align-items:stretch;text-align:left}
+  .card.invite .btn{max-width:none}
+  .invite .stats{justify-content:flex-start}
+}
+
+/* Footer bar */
+.footer{background:var(--bg);border-top:1px solid var(--line);padding:1.25rem var(--pad);display:flex;align-items:center;justify-content:space-between;gap:1rem 2rem;flex-wrap:wrap;font-size:.8rem;color:var(--faint);line-height:1.6}
+.footer .note{color:#7d7d7d}
+.footer nav{display:flex;gap:1.5rem}
+.footer nav a{color:var(--muted);transition:color .2s}
+.footer nav a:hover{color:#fff}
+@media(max-width:600px){.footer{flex-direction:column;text-align:center}}
 </style>
 </head>
 <body>
@@ -124,130 +138,76 @@ img{display:block}
 <symbol id="i-youtube" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></symbol>
 </svg>
 
-<canvas id="stars"></canvas>
-<div class="page">
-<nav class="navbar">
-<button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
-</nav>
-<div id="mobile-menu" class="mobile-menu">
-<a href="https://github.com/itsdarexmc" target="_blank" rel="noopener noreferrer">GitHub</a>
-<a href="https://youtube.com/@itsdarexmc" target="_blank" rel="noopener noreferrer">YouTube</a>
-<a class="mobile-cta" href="https://discord.gg/ametium" target="_blank" rel="noopener noreferrer">Discord</a>
-</div>
 <main>
-<section class="hero" id="home">
-<div class="hero-grid"></div>
-<div class="hero-inner">
-<div class="hero-logo"><img src="https://ametium.dev/ametium.png" alt="Ametium" width="320" height="320" onerror="this.style.display='none'"></div>
-<div class="hero-text">
-<h1 class="hero-title"><span class="word-main">Ametium</span><span class="word-sub">Utility Mod</span></h1>
-<p class="hero-sub">An addon for Meteor Client that adds some of the most advanced modules to Minecraft.</p>
-<div class="hero-buttons"><a href="https://discord.gg/ametium" class="btn btn-main" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-discord"/></svg>Discord</a><a href="https://github.com/itsdarexmc" class="btn btn-ghost" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a></div>
-</div>
-</div>
-</section>
+  <section class="hero">
+    <h1 class="rise d1"><span class="word">Ametium</span> Addon</h1>
+    <p class="lead rise d2">An addon for Meteor Client that adds some of the most advanced modules to Minecraft.</p>
+    <div class="cta-row rise d3">
+      <a href="https://discord.gg/ametium" class="btn btn-main" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-discord"/></svg>Discord</a>
+      <a href="https://github.com/itsdarexmc" class="btn btn-ghost" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a>
+    </div>
+  </section>
+
+  <section class="sec sec-alt" id="community">
+    <div class="wrap">
+      <h2 class="reveal">Community</h2>
+      <div class="card invite reveal">
+        <div class="invite-copy">
+          <h3>Get Ametium on Discord</h3>
+          <p>The addon is only shared through our Discord server. Join to install it and get support directly from developers.</p>
+          <div class="stats">
+            <span><span class="dot" aria-hidden="true"></span><span id="total-members">…</span> Total</span>
+            <span><span class="dot on" aria-hidden="true"></span><span id="online-members">…</span> Online</span>
+          </div>
+        </div>
+        <a href="https://discord.gg/ametium" class="btn btn-main" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-discord"/></svg>Join server</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="dev">
+    <div class="wrap">
+      <h2 class="reveal">Founder</h2>
+      <div class="card invite founder reveal">
+        <div class="who">
+          <img class="skin" src="https://ametium.dev/darex.png" alt="ItsDarexMC skin" width="88" height="88" onerror="this.style.display='none'">
+          <div class="invite-copy">
+            <h3>ItsDarexMC</h3>
+            <p>Founder and lead developer of Ametium.</p>
+          </div>
+        </div>
+        <a href="https://youtube.com/@itsdarexmc" class="btn btn-main" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-youtube"/></svg>YouTube</a>
+      </div>
+    </div>
+  </section>
 </main>
-<footer class="footer"><div class="footer-inner">
-<div class="discord-card">
-<div class="discord-info">
-<img src="https://ametium.dev/ametium.png" alt="" width="72" height="72" onerror="this.style.display='none'">
-<div class="discord-text">
-<h2>Ametium Development</h2>
-<div class="discord-stats" aria-live="polite">
-<span><span class="stat-dot" aria-hidden="true"></span><span id="total-members">…</span> Total</span>
-<span><span class="stat-dot online" aria-hidden="true"></span><span id="online-members">…</span> Online</span>
-</div>
-</div>
-</div>
-<a href="https://discord.gg/ametium" class="btn btn-main" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-discord"/></svg>Discord</a>
-</div>
-<section class="team" id="team">
-<div class="team-grid">
-<div class="team-card">
-<div class="team-info">
-<img src="https://ametium.dev/darex.png" alt="Skin de ItsDarexMC" width="72" height="72" onerror="this.style.display='none'">
-<div class="team-text">
-<h3 class="team-name">ItsDarexMC</h3>
-<div class="team-role">Owner/Founder</div>
-</div>
-</div>
-<a href="https://youtube.com/@itsdarexmc" class="btn btn-main" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-youtube"/></svg>YouTube</a>
-</div>
-</div>
-</section>
-<div class="footer-bottom">
-<p class="footer-copy">© 2026 <span>Ametium Development</span>. All rights reserved.</p>
-<div class="footer-legal"><a href="https://github.com/itsdarexmc" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://discord.gg/ametium" target="_blank" rel="noopener noreferrer">Discord</a><a href="https://youtube.com/@itsdarexmc" target="_blank" rel="noopener noreferrer">YouTube</a></div>
-</div>
-</div></footer>
-</div>
+
+<footer class="footer">
+  <p>© 2026 Ametium Development. All rights reserved.<br><span class="note">Not affiliated with or endorsed by Mojang AB</span></p>
+  <nav aria-label="Footer">
+    <a href="https://github.com/itsdarexmc" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href="https://discord.gg/ametium" target="_blank" rel="noopener noreferrer">Discord</a>
+    <a href="https://youtube.com/@itsdarexmc" target="_blank" rel="noopener noreferrer">YouTube</a>
+  </nav>
+</footer>
 <script>
 (function(){
-var burger=document.getElementById('hamburger');
-var menu=document.getElementById('mobile-menu');
-burger.addEventListener('click',function(){
-var open=menu.classList.toggle('open');
-burger.classList.toggle('open',open);
-burger.setAttribute('aria-expanded',open?'true':'false');
-});
-menu.querySelectorAll('a').forEach(function(a){
-a.addEventListener('click',function(){
-menu.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded','false');
-});
-});
 var total=document.getElementById('total-members');
 var online=document.getElementById('online-members');
-function fmt(n){return Number.isFinite(n)?n.toLocaleString('en-US'):'0'}
-function updateStats(){
-if(document.hidden)return;
-var ctrl=new AbortController();
-var timer=setTimeout(function(){ctrl.abort()},8000);
-fetch('https://discord.com/api/v9/invites/ametium?with_counts=true',{signal:ctrl.signal})
-.then(function(r){if(!r.ok)throw new Error(r.status);return r.json()})
-.then(function(d){total.textContent=fmt(d.approximate_member_count);online.textContent=fmt(d.approximate_presence_count)})
-.catch(function(){if(total.textContent==='…')total.textContent='0';if(online.textContent==='…')online.textContent='0'})
-.finally(function(){clearTimeout(timer)});
+function fmt(n){return Number.isFinite(n)?n.toLocaleString('en-US'):'—'}
+function update(){
+  if(document.hidden)return;
+  var ctrl=new AbortController();
+  var t=setTimeout(function(){ctrl.abort()},8000);
+  fetch('https://discord.com/api/v9/invites/ametium?with_counts=true',{signal:ctrl.signal})
+    .then(function(r){if(!r.ok)throw new Error(r.status);return r.json()})
+    .then(function(d){total.textContent=fmt(d.approximate_member_count);online.textContent=fmt(d.approximate_presence_count)})
+    .catch(function(){if(total.textContent==='…')total.textContent='—';if(online.textContent==='…')online.textContent='—'})
+    .finally(function(){clearTimeout(t)});
 }
-updateStats();
-setInterval(updateStats,60000);
-document.addEventListener('visibilitychange',function(){if(!document.hidden)updateStats()});
-var canvas=document.getElementById('stars');
-var ctx=canvas.getContext('2d');
-var stars=[];
-var lastW=0;
-function resize(){
-var w=window.innerWidth,h=window.innerHeight;
-if(w===lastW&&stars.length){
-if(h>canvas.height)canvas.height=h;
-return;
-}
-lastW=w;
-canvas.width=w;
-canvas.height=h;
-var n=Math.floor(w*h/(w<=600?7000:16000));
-stars=[];
-for(var i=0;i<n;i++){
-stars.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.1+.2,a:Math.random()*.5+.15,s:Math.random()*.02+.004,d:Math.random()*Math.PI*2,v:Math.random()*.3+.08});
-}
-}
-function draw(){
-ctx.clearRect(0,0,canvas.width,canvas.height);
-for(var i=0;i<stars.length;i++){
-var s=stars[i];
-s.d+=s.s;
-s.y-=s.v;
-if(s.y<-2){s.y=canvas.height+2;s.x=Math.random()*canvas.width}
-var o=s.a*(.6+.4*Math.sin(s.d));
-ctx.beginPath();
-ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
-ctx.fillStyle='rgba(255,255,255,'+o.toFixed(3)+')';
-ctx.fill();
-}
-requestAnimationFrame(draw);
-}
-window.addEventListener('resize',resize);
-resize();
-draw();
+update();
+setInterval(update,60000);
+document.addEventListener('visibilitychange',function(){if(!document.hidden)update()});
 })();
 </script>
 </body>
