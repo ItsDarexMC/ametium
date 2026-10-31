@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark" style="color-scheme: dark;"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"><title>Ametium - Meteor Client Addon</title><meta name="description" content="An addon for Meteor Client that adds some of the most advanced modules to Minecraft."><link rel="icon" href="icon.png"><link rel="stylesheet" href="assets/site.css"><style>
+
+#community{padding-top:7rem;padding-bottom:5rem}
+
+#team{--am-brand:#5a0096;--am-bg:#080808;--am-bg-2:#1c1c1c;--am-text:#f5f5f5;--am-muted:#a3a3a3;--am-line:rgba(255,255,255,.08);--am-font:'Montserrat',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;--am-ease:cubic-bezier(.22,1,.36,1);--am-pad:clamp(1.25rem,6vw,5rem);color:var(--am-text);font-family:var(--am-font);padding-top:7rem;padding-bottom:6rem;scroll-margin-top:0}
+#team svg{display:block}
+#team :focus-visible{outline:2px solid #fff;outline-offset:3px;border-radius:6px}
+.team-card{display:flex;align-items:center;justify-content:space-between;gap:1.5rem 2rem;max-width:900px;margin:0 auto;padding:clamp(1.75rem,5vw,3.25rem);background:radial-gradient(34rem 18rem at 100% 0%,rgba(90,0,150,.3),transparent 70%),var(--am-bg-2);border:1px solid var(--am-line);border-radius:20px;box-shadow:0 30px 60px -25px rgba(0,0,0,.85)}
+.team-who{display:flex;align-items:center;gap:1.5rem;min-width:0}
+.team-avatar{width:88px;height:88px;flex-shrink:0;border-radius:12px;object-fit:cover;image-rendering:pixelated}
+.team-name{font-size:clamp(1.5rem,1.1rem + 1.6vw,2.1rem);font-weight:700;line-height:1.15;letter-spacing:-.03em}
+.team-role{margin-top:.4rem;color:var(--am-muted);font-size:clamp(1rem,.95rem + .3vw,1.1rem);line-height:1.7}
+.team-links{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;flex-shrink:0}
+.team-link{width:48px;height:48px;display:grid;place-items:center;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid var(--am-line);transition:transform .35s var(--am-ease),border-color .25s ease,background .25s ease}
+.team-link .icon{width:20px;height:20px}
+@media(max-width:600px){.team-card{flex-direction:column;align-items:stretch;padding:1.5rem}.team-who{gap:1rem}.team-avatar{width:72px;height:72px}.team-links{justify-content:flex-start}}
+.team-link{color:#fff}
+.team-link .icon{fill:currentColor}
+@media(hover:hover){.team-link:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3)}}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){.team-link:hover{transform:translateY(-3px)}}
+.doc-head{max-width:720px;margin:0 auto 3rem;text-align:center;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.doc-head h2{display:inline-block;font-family:var(--font-raleway),ui-sans-serif,system-ui,sans-serif;font-weight:700;font-size:clamp(2rem,5vw,3rem);line-height:1.15;letter-spacing:-.01em;background:linear-gradient(90deg,#5a0096,#fff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.doc-head p{margin-top:.9rem;font-family:var(--font-roboto),ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,sans-serif;font-size:1.125rem;line-height:1.75rem;color:#a3a3a3;text-shadow:0 2px 4px rgba(0,0,0,.4)}@media(min-width:768px){.doc-head p{font-size:1.25rem}}
+</style><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@400&display=swap" rel="stylesheet"></head><body class="__variable_f367f3 __variable_c06d0e __variable_225359 font-roboto antialiased"><main><header id="site-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4 bg-transparent"><div class="container mx-auto px-4 nav-grid"><div class="nav-left"></div><nav class="flex items-center space-x-8"><ul class="flex nav-items"><li><a class="nav-link text-sm font-medium active" href="#home">Home</a></li><li><a class="nav-link text-sm font-medium" href="faq/index.html">FAQ</a></li><li><a class="nav-link text-sm font-medium" href="tos/index.html">TOS</a></li></ul></nav><div class="nav-right"></div></div></header><div id="main-scroll-container" class="scroll-container"><svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+<symbol id="i-discord" viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/></symbol>
+<symbol id="i-github" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol>
+<symbol id="i-youtube" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></symbol>
+<symbol id="i-tiktok" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></symbol>
+<symbol id="i-instagram" viewBox="0 0 24 24"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></symbol>
+</svg><section id="home" class="scroll-section flex flex-col items-center justify-center relative overflow-hidden bg-background h-screen"><div class="container mx-auto px-4 text-center z-10 animate-fade-in"><h1 class="text-4xl md:text-6xl lg:text-7xl heading-lg font-raleway font-bold mb-4 text-white" aria-label="AMETIUM ADDON"><svg class="am-logo" id="am-logo" viewBox="90 60 1478 142" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><linearGradient id="am-grad" gradientUnits="userSpaceOnUse" x1="98" y1="0" x2="1560" y2="0"><stop offset="0" stop-color="#5a0096"/><stop offset="1" stop-color="#ffffff"/></linearGradient></defs><path pathLength="1" d="M97.98 191.84H125.96L135.17 163.12H179.08L188.63 191.84H216.77L173.44 68.16H140.23ZM141.48 143.28 145.05 132.16C148.78 119.71 152.44 105.01 156.59 88.00C160.90 104.85 164.80 119.46 168.79 132.16L172.52 143.28Z" style="--i:0"/><path pathLength="1" d="M228.64 191.84H253.79V133.49C253.79 124.19 253.13 106.01 252.88 90.99C257.28 107.59 262.26 124.94 265.16 133.49L286.00 191.84H307.33L327.84 133.49C330.74 124.69 335.97 106.67 340.12 89.99C339.87 105.60 339.21 124.19 339.21 133.49V191.84H364.69V68.16H325.68L305.92 124.94C303.43 132.82 299.61 149.34 296.79 162.71C293.88 149.26 290.07 132.74 287.58 124.94L267.49 68.16H228.64Z" style="--i:1"/><path pathLength="1" d="M383.62 191.84H466.54V170.84H408.94V139.71H462.06V119.04H408.94V89.16H466.38V68.16H383.62Z" style="--i:2"/><path pathLength="1" d="M478.50 89.16H516.35V191.84H541.75V89.16H579.52V68.16H478.50Z" style="--i:3"/><path pathLength="1" d="M618.87 68.16H593.55V191.84H618.87Z" style="--i:4"/><path pathLength="1" d="M688.93 193.58C719.48 193.58 739.98 175.49 739.98 148.43V68.16H714.58V146.35C714.58 160.80 704.45 171.17 688.93 171.17C673.41 171.17 663.20 160.80 663.20 146.35V68.16H637.88V148.43C637.88 175.49 658.14 193.58 688.93 193.58Z" style="--i:5"/><path pathLength="1" d="M758.91 191.84H784.06V133.49C784.06 124.19 783.40 106.01 783.15 90.99C787.55 107.59 792.53 124.94 795.43 133.49L816.27 191.84H837.60L858.11 133.49C861.01 124.69 866.24 106.67 870.39 89.99C870.14 105.60 869.48 124.19 869.48 133.49V191.84H894.96V68.16H855.95L836.19 124.94C833.70 132.82 829.88 149.34 827.06 162.71C824.16 149.26 820.34 132.74 817.85 124.94L797.76 68.16H758.91Z" style="--i:6"/><path pathLength="1" d="M955.00 191.84H982.98L992.19 163.12H1036.10L1045.65 191.84H1073.79L1030.46 68.16H997.25ZM998.50 143.28 1002.07 132.16C1005.80 119.71 1009.46 105.01 1013.61 88.00C1017.92 104.85 1021.82 119.46 1025.81 132.16L1029.54 143.28Z" style="--i:7"/><path pathLength="1" d="M1087.79 68.16H1142.79C1175.79 68.16 1193.79 92.00 1193.79 130.00C1193.79 168.00 1175.79 191.84 1142.79 191.84H1087.79ZM1113.09 89.16V170.84H1140.79C1159.79 170.84 1168.29 155.00 1168.29 130.00C1168.29 105.00 1159.79 89.16 1140.79 89.16Z" style="--i:8"/><path pathLength="1" d="M1207.79 68.16H1262.79C1295.79 68.16 1313.79 92.00 1313.79 130.00C1313.79 168.00 1295.79 191.84 1262.79 191.84H1207.79ZM1233.09 89.16V170.84H1260.79C1279.79 170.84 1288.29 155.00 1288.29 130.00C1288.29 105.00 1279.79 89.16 1260.79 89.16Z" style="--i:9"/><path pathLength="1" d="M1383.79 66.42C1417.79 66.42 1439.79 92.00 1439.79 130.00C1439.79 168.00 1417.79 193.58 1383.79 193.58C1349.79 193.58 1327.79 168.00 1327.79 130.00C1327.79 92.00 1349.79 66.42 1383.79 66.42ZM1383.79 88.50C1365.79 88.50 1353.09 105.00 1353.09 130.00C1353.09 155.00 1365.79 171.20 1383.79 171.20C1401.79 171.20 1414.49 155.00 1414.49 130.00C1414.49 105.00 1401.79 88.50 1383.79 88.50Z" style="--i:10"/><path pathLength="1" d="M1453.79 191.84V68.16H1481.79L1534.49 140.00V68.16H1559.79V191.84H1531.79L1479.09 120.00V191.84Z" style="--i:11"/></svg></h1><p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-8 text-shadow-md">An addon for Meteor Client that adds some of the most advanced modules to Minecraft.</p><div class="hero-btns flex flex-col sm:flex-row items-center justify-center gap-4"><a class="inline-flex items-center justify-center whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-12 rounded-md px-10 text-base bg-primary hover:bg-primary/80 text-white font-medium" href="https://discord.gg/ametium" target="_blank" rel="noopener noreferrer">Discord</a><a class="inline-flex items-center justify-center whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border bg-background h-12 rounded-md px-10 text-base border-white/20 text-white hover:bg-white/10 hover:text-white" href="https://github.com/ItsDarexMC" target="_blank" rel="noopener noreferrer">GitHub</a></div></div></section>
+<section class="sec sec-alt bg-background" id="community">
+    <div class="wrap">
+      <div class="doc-head"><h2>Community</h2><p>Join the Ametium community, get support and follow every update.</p></div>
+      <div class="cards-grid cc-stage" aria-roledescription="carousel" aria-label="Community">
+      <div class="card invite" data-pos="active"><button type="button" class="cc-select" aria-label="Show Discord"></button>
+        <div class="card-who"><span class="card-logo card-logo--dc" aria-hidden="true"><svg><use href="#i-discord"/></svg></span><div class="invite-copy">
+          <h3>Discord</h3>
+          <p>The addon is only shared through our Discord server. Join to install it and get support directly from developers.</p>
+          <div class="stats">
+            <span><span class="dot" aria-hidden="true"></span><span id="total-members">…</span> Total</span>
+            <span><span class="dot on" aria-hidden="true"></span><span id="online-members">…</span> Online</span>
+          </div>
+        </div></div>
+        <a href="https://discord.gg/ametium" class="btn btn-main" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-discord"/></svg>Join server</a>
+      </div>
+      <div class="card invite yt" data-pos="next"><button type="button" class="cc-select" aria-label="Show YouTube"></button>
+        <div class="card-who"><span class="card-logo card-logo--yt" aria-hidden="true"><svg><use href="#i-youtube"/></svg></span><div class="invite-copy">
+          <h3>YouTube</h3>
+          <p>See Ametium in action through module showcases, demos and video updates.</p>
+        </div></div>
+        <a href="https://youtube.com/@itsdarexmc" class="btn btn-main" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-youtube"/></svg>YouTube</a>
+      </div>
+      <div class="card invite gh" data-pos="prev"><button type="button" class="cc-select" aria-label="Show GitHub"></button>
+        <div class="card-who"><span class="card-logo card-logo--gh" aria-hidden="true"><svg><use href="#i-github"/></svg></span><div class="invite-copy">
+          <h3>GitHub</h3>
+          <p>Explore our projects and source code on GitHub.</p>
+          <div class="stats">
+            <span><span class="dot" aria-hidden="true"></span><span id="gh-repos">…</span> Repositories</span>
+            <span><span class="dot white" aria-hidden="true"></span><span id="gh-followers">…</span> Followers</span>
+          </div>
+        </div></div>
+        <a href="https://github.com/ItsDarexMC" class="btn btn-main" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a>
+      </div>
+      </div>
+      <div class="cc-controls"><button type="button" class="cc-arrow" data-dir="-1" aria-label="Previous"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14.5 6-6 6 6 6"/></svg></button><div class="cc-dots"><button type="button" aria-label="Show Discord"></button><button type="button" aria-label="Show YouTube"></button><button type="button" aria-label="Show GitHub"></button></div><button type="button" class="cc-arrow" data-dir="1" aria-label="Next"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg></button></div>
+    </div>
+  </section>
+<section class="sec" id="team"><div class="wrap"><div class="doc-head"><h2>Dev Team</h2><p>Meet the developers behind Ametium.</p></div><div class="team-card"><div class="team-who"><img class="team-avatar" src="darex.png" alt="ItsDarexMC skin" width="88" height="88" onerror="this.style.display='none'"><div><h3 class="team-name">ItsDarexMC</h3><p class="team-role">Founder and lead developer of Ametium.</p></div></div><div class="team-links"><a class="team-link" data-n="youtube" href="https://youtube.com/@ItsDarexMC" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube"><svg class="icon" aria-hidden="true"><use href="#i-youtube"/></svg></a><a class="team-link" data-n="tiktok" href="https://tiktok.com/@ItsDarexMC" target="_blank" rel="noopener noreferrer" aria-label="TikTok" title="TikTok"><svg class="icon" aria-hidden="true"><use href="#i-tiktok"/></svg></a><a class="team-link" data-n="instagram" href="https://instagram.com/ItsDarexMC" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg></a><a class="team-link" data-n="github" href="https://github.com/ItsDarexMC" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a></div></div></div></section>
+<footer class="relative bg-gradient-to-br from-secondary/50 to-background border-t border-border/50 py-16 snap-start" id="footer"><div class="absolute inset-0 opacity-10"><div class="absolute top-0 left-1/4 w-32 h-32 bg-primary/20 rounded-full blur-3xl"></div><div class="absolute bottom-0 right-1/4 w-24 h-24 bg-primary/10 rounded-full blur-2xl"></div></div><div class="container mx-auto px-4 relative z-10"><div class="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left"><div><p class="text-sm text-muted-foreground">© 2026 Ametium Development. All rights reserved.</p><p class="text-xs text-muted-foreground mt-2">Not affiliated with or endorsed by Mojang AB</p></div><nav class="flex flex-wrap items-center justify-center gap-8"><a class="nav-link text-sm text-muted-foreground" href="https://github.com/ItsDarexMC" target="_blank" rel="noopener noreferrer">GitHub</a><a class="nav-link text-sm text-muted-foreground" href="https://discord.gg/ametium" target="_blank" rel="noopener noreferrer">Discord</a><a class="nav-link text-sm text-muted-foreground" href="https://youtube.com/@itsdarexmc" target="_blank" rel="noopener noreferrer">YouTube</a></nav></div></div></footer></div></main><!--$--><!--/$--><!--$--><!--/$-->
+<next-route-announcer style="position: absolute;"></next-route-announcer><script>
+(function(){
+var total=document.getElementById('total-members');
+var online=document.getElementById('online-members');
+function fmt(n){return Number.isFinite(n)?n.toLocaleString('en-US'):'—'}
+function update(){
+  if(document.hidden)return;
+  var ctrl=new AbortController();
+  var t=setTimeout(function(){ctrl.abort()},8000);
+  fetch('https://discord.com/api/v9/invites/ametium?with_counts=true',{signal:ctrl.signal})
+    .then(function(r){if(!r.ok)throw new Error(r.status);return r.json()})
+    .then(function(d){total.textContent=fmt(d.approximate_member_count);online.textContent=fmt(d.approximate_presence_count)})
+    .catch(function(){if(total.textContent==='…')total.textContent='—';if(online.textContent==='…')online.textContent='—'})
+    .finally(function(){clearTimeout(t)});
+}
+update();
+setInterval(update,60000);
+document.addEventListener('visibilitychange',function(){if(!document.hidden)update()});
+})();
+</script><script>
+(function(){
+var GH_USER='ItsDarexMC';
+function fmt(n){n=Number(n);return Number.isFinite(n)?n.toLocaleString('en-US'):'—'}
+function set(id,v){var e=document.getElementById(id);if(e)e.textContent=v}
+function get(url){var c=new AbortController(),t=setTimeout(function(){c.abort()},8000);
+  return fetch(url,{signal:c.signal}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json()}).finally(function(){clearTimeout(t)})}
+function github(){
+  get('https://api.github.com/users/'+GH_USER)
+    .then(function(d){set('gh-repos',fmt(d.public_repos));set('gh-followers',fmt(d.followers))})
+    .catch(function(){set('gh-repos','—');set('gh-followers','—')});
+}
+github();
+setInterval(github,600000);
+})();
+</script><script>
+(function(){
+var stage=document.querySelector('#community .cc-stage');if(!stage)return;
+var cards=[].slice.call(stage.querySelectorAll(':scope>.card')),dots=[].slice.call(document.querySelectorAll('#community .cc-dots button')),i=0,n=cards.length;
+function show(k){
+  i=(k+n)%n;
+  cards.forEach(function(c,j){
+    var pos=j===i?'active':(j===(i+1)%n?'next':'prev');
+    c.setAttribute('data-pos',pos);
+    c.querySelectorAll('a').forEach(function(a){a.tabIndex=j===i?0:-1});
+    c.setAttribute('aria-hidden',j===i?'false':'true');
+    c.querySelector('.cc-select').tabIndex=j===i?-1:0;
+  });
+  dots.forEach(function(d,j){d.classList.toggle('is-active',j===i);d.setAttribute('aria-current',j===i?'true':'false')});
+}
+function fit(){
+  var m=0;cards.forEach(function(c){c.style.height='auto'});
+  cards.forEach(function(c){m=Math.max(m,c.offsetHeight)});
+  cards.forEach(function(c){c.style.height=m+'px'});
+  stage.style.setProperty('--cc-h',m+'px');
+}
+document.querySelectorAll('#community .cc-arrow').forEach(function(b){b.addEventListener('click',function(){show(i+(+b.dataset.dir))})});
+dots.forEach(function(d,j){d.addEventListener('click',function(){show(j)})});
+cards.forEach(function(c,j){c.querySelector('.cc-select').addEventListener('click',function(){show(j)})});
+stage.addEventListener('keydown',function(e){if(e.key==='ArrowLeft')show(i-1);if(e.key==='ArrowRight')show(i+1)});
+var x0=null;
+stage.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+stage.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)show(i+(dx<0?1:-1));x0=null});
+window.addEventListener('resize',fit);
+window.addEventListener('load',fit);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
+fit();show(0);
+})();
+</script><script>
+(function(){
+var sc=document.getElementById('main-scroll-container'),hd=document.getElementById('site-header'),pg=document.querySelector('.scroll-progress');
+var links=[].slice.call(document.querySelectorAll('.nav-link[href^="#"]'));
+function onScroll(){
+  var y=sc.scrollTop,max=sc.scrollHeight-sc.clientHeight;
+  var s=y>20;
+  hd.classList.toggle('py-4',!s);hd.classList.toggle('bg-transparent',!s);
+  ['py-2','bg-background/95','backdrop-blur-sm','border-b','border-border/40'].forEach(function(c){hd.classList.toggle(c,s)});
+  if(pg)pg.style.transform='scaleX('+(max>0?y/max:0)+')';
+  var cur=null;
+  links.forEach(function(l){var t=document.querySelector(l.getAttribute('href'));if(t&&t.getBoundingClientRect().top<=window.innerHeight*0.4)cur=l});
+  links.forEach(function(l){l.classList.toggle('active',l===cur)});
+}
+sc.addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+</script><script>
+(function(){
+var el=document.getElementById('am-logo');if(!el)return;
+function play(){el.classList.remove('run');void el.getBoundingClientRect();el.classList.add('run')}
+requestAnimationFrame(play);
+})();
+</script><script>
+(function(){
+document.querySelectorAll('.nav-link[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var t=document.querySelector(a.getAttribute('href'));
+    if(!t)return;
+    e.preventDefault();
+    t.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+});
+})();
+</script><script>
+(function(){
+try{var g=sessionStorage.getItem('am-go');if(g){sessionStorage.removeItem('am-go');var t=document.getElementById(g);if(t)requestAnimationFrame(function(){t.scrollIntoView({behavior:'instant',block:'start'})})}}catch(e){}
+})();
+</script></body></html>
